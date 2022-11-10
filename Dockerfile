@@ -5,14 +5,14 @@ LABEL Description="This image provides a base Android development environment fo
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Keep the previous SDK as a fallback until we've finished the migration.
-ARG ANDROID_BUILD_VERSION_FALLBACK=31
-ARG ANDROID_TOOLS_VERSION_FALLBACK=31.0.0
+ARG ANDROID_BUILD_VERSION_FALLBACK=29
+ARG ANDROID_TOOLS_VERSION_FALLBACK=29.0.2
 
 # set default build arguments
 # https://developer.android.com/studio#command-tools
 ARG SDK_VERSION=commandlinetools-linux-8512546_latest.zip
-ARG ANDROID_BUILD_VERSION=33
-ARG ANDROID_TOOLS_VERSION=33.0.0
+ARG ANDROID_BUILD_VERSION=29
+ARG ANDROID_TOOLS_VERSION=29.0.2
 ARG BUCK_VERSION=2022.05.05.01
 # Buck doesn't support versions beyond NDK 21
 # Therefore we need to diverge the NDK version and set NDK_HOME
@@ -115,7 +115,7 @@ RUN curl -sS https://dl.google.com/android/repository/${SDK_VERSION} -o /tmp/sdk
         "build-tools;$ANDROID_TOOLS_VERSION" \
         "build-tools;$ANDROID_TOOLS_VERSION_FALLBACK" \
         "cmake;$CMAKE_VERSION" \
-        "system-images;android-21;google_apis;armeabi-v7a" \
+        "system-images;android-16;google_apis;armeabi-v7a" \
         "ndk;$NDK_VERSION_BUCK" \
         "ndk;$NDK_VERSION_GRADLE" \
     && rm -rf ${ANDROID_HOME}/.android \
