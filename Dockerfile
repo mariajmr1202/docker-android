@@ -115,7 +115,7 @@ RUN curl -sS https://dl.google.com/android/repository/${SDK_VERSION} -o /tmp/sdk
         "build-tools;$ANDROID_TOOLS_VERSION" \
         "build-tools;$ANDROID_TOOLS_VERSION_FALLBACK" \
         "cmake;$CMAKE_VERSION" \
-        "system-images;android-16;google_apis;armeabi-v7a" \
+        "system-images;android-21;google_apis;armeabi-v7a" \
         "ndk;$NDK_VERSION_BUCK" \
         "ndk;$NDK_VERSION_GRADLE" \
     && rm -rf ${ANDROID_HOME}/.android \
